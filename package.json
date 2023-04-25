@@ -1,0 +1,46 @@
+{
+  "name": "demo.playwright.ts.cuke",
+  "version": "1.0.0",
+  "description": "demo playwright with typescript and cucumber on saucedemo website",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run create:reports:location && npx cucumber-js -p test_runner --tags  @Smoke",
+    "clean:test": "npm test & node ./html-report-generator.js && npm run cleanup:reports",
+    "test:cmd:variables": "env-cmd --verbose -e",
+    "lint": "eslint . --ext .ts",
+    "create:reports:location": "mkdirp reports && echo '{}' > reports/cucumber_report.json",
+    "cleanup:reports": "rimraf reports"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cosminCirstea/demo.playwright.ts.cuke.git"
+  },
+  "keywords": [
+    "template",
+    "Playwright",
+    "TypeScript",
+    "Cucumber"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^8.9.1",
+    "cucumber-html-reporter": "^6.0.0",
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0",
+    "playwright": "^1.32.1",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@playwright/test": "^1.32.1",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "mkdirp": "^3.0.0",
+    "rimraf": "^5.0.0"
+  }
+}
