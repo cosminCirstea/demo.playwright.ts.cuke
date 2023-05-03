@@ -9,7 +9,7 @@ const options = {
     brandTitle: "web-automation",
     theme: 'bootstrap',
     jsonFile: 'reports/cucumber_report.json',
-    output: 'reports/cucumber_report_' + currentDate + '.html',
+    output: 'reports/cucumber_report.html',
     screenshotsDirectory: './screenshots/',
     storeScreenshots: true,
     reportSuiteAsScenarios: true, 
