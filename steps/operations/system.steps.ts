@@ -43,6 +43,10 @@ Then('I am logged in succesfully', async () => {
   await expect(getLocatorById(MENU_BTN)).toBeVisible();
 });
 
+Then('an error message is displayed', async () => {
+  await expect(getLocatorByClass('error-message-container')).toBeVisible();
+})
+
 /**
  * logout action and verification
  */
