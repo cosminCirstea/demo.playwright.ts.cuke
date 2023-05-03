@@ -16,11 +16,14 @@ jobs:
       run: npm run create:reports:location
     
     - name: Run tests
-      run: npm run ci:test    
+      run: npm run ci:test
+    
+    - name: Generate reports
+      if: always()
+      run: npm run generate:reports     
     
     - name: Upload test results
       if: always()
-      run: npm run generate:reports   
       uses: actions/upload-artifact@v3
       with:
         name: test-result-report
