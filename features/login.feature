@@ -1,4 +1,4 @@
-@Smoke
+@Login
 Feature: Log in the website
 
     Feature Description: A user can log in the website succesfully
