@@ -69,7 +69,7 @@
 
 - You can run scripts from the `package.json` file or build your own
 - To enable running scripts by `play` button on `NPM SCRIPTS` click on the three dots at the right of `EXPLORER` and toggle the `NPM Scripts`
-    - `test` -> it will run all tests filtered by tags(default is @Smoke, but can be changed) on the default set browser and environment(e.g. dev and 'chromium')
+    - `test` -> it will run all tests filtered by tags(default is @Smoke, but can be changed) on the default set browser and environment(e.g. dev and 'headlessChromium')
     - `clean:test` -> it will create the `reports` folder and the `cucumber_report.json` file if they do not already exists then do the same actions as the `test` script, then at the end it opens the cucumber reports in the default browser and removes the `reports` folder with all its content after.
     - `test:cmd:variables` -> should not be run from the `play` button, but from the terminal. The role of this script is to allow selection of any environment-browser-user combination from the .env-cmdrc file. 
         - You have 2 ways of using it:
