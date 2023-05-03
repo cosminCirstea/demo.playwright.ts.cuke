@@ -1,7 +1,5 @@
 name: demo
-on:
-  push:
-    branches: [ main, master ]
+on: push
 jobs:
   run:
     timeout-minutes: 60
