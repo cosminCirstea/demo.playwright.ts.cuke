@@ -9,7 +9,9 @@
     "test:cmd:variables": "env-cmd --verbose -e",
     "lint": "eslint . --ext .ts",
     "create:reports:location": "mkdirp reports && echo '{}' > reports/cucumber_report.json",
-    "cleanup:reports": "rimraf reports"
+    "cleanup:reports": "rimraf reports",
+    "ci:test": "npx cucumber-js -p test_runner --tags  @Smoke",
+    "generate:reports": "node ./html-report-generator.js"
   },
   "repository": {
     "type": "git",
