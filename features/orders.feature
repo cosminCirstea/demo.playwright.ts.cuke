@@ -4,7 +4,8 @@ Feature: Placing an order
     Feature Description: A user can place an order succesfully
 
     Background: Setup
-        Given I am logged in the website
+        When I log in with the username 'standard_user' and password 'secret_sauce'
+        Then I am logged in succesfully
 
     Scenario: A user can place an order succesfully
         When I add the product 'Fleece Jacket' to the cart
