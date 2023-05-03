@@ -13,7 +13,7 @@ const options = {
     screenshotsDirectory: './screenshots/',
     storeScreenshots: true,
     reportSuiteAsScenarios: true, 
-    launchReport: false,
+    launchReport: true,
     ignoreBadJsonFile: true,
     metaData: {
         "App Version": "1.0.0",
