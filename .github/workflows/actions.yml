@@ -1,0 +1,30 @@
+name: demo
+on: push
+jobs:
+  run:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Create reports storage location
+      run: npm run create:reports:location
+    
+    - name: Run tests
+      run: npm run ci:test
+    
+    - name: Generate reports
+      if: always()
+      run: npm run generate:reports     
+    
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-result-report
+        path: reports/cucumber_report.html

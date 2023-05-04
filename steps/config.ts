@@ -16,7 +16,7 @@ const browserOptions: LaunchOptions = {
  * This makes the connection between the env-cmdrc file and code. Values selection can be controled from npm scripts
  */
 export const config = {
-  browser: process.env.BROWSER || 'chromium',
+  browser: process.env.BROWSER || 'headlessChromium',
   browserOptions,
   environment: process.env.ENV || 'https://www.saucedemo.com/',
   user: process.env.USER || 'standard_user',

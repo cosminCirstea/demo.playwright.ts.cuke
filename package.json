@@ -4,12 +4,15 @@
   "description": "demo playwright with typescript and cucumber on saucedemo website",
   "main": "index.js",
   "scripts": {
-    "test": "npm run create:reports:location && npx cucumber-js -p test_runner --tags  @Smoke",
+    "test": "npm run create:reports:location & npx cucumber-js -p test_runner --tags  @Smoke & node ./html-report-generator.js",
     "clean:test": "npm test & node ./html-report-generator.js && npm run cleanup:reports",
     "test:cmd:variables": "env-cmd --verbose -e",
     "lint": "eslint . --ext .ts",
     "create:reports:location": "mkdirp reports && echo '{}' > reports/cucumber_report.json",
-    "cleanup:reports": "rimraf reports"
+    "cleanup:reports": "rimraf reports",
+    "ci:test": "env-cmd --verbose -e sauceDemo npm run simple:test",
+    "generate:reports": "node ./html-report-generator.js",
+    "simple:test": "npx cucumber-js -p test_runner --tags  @Smoke"
   },
   "repository": {
     "type": "git",
